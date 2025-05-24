@@ -1,0 +1,23 @@
+name: Basic HTML CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  html-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Run HTML linter (basic)
+        run: |
+          echo "Check file: web-app/index.html"
+          if grep -qi '<html' web-app/index.html; then
+        else
+          echo " X HTML structure missing"
+          exit 1
+        fi
