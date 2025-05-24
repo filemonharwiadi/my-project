@@ -16,9 +16,9 @@ jobs:
       - name: Run HTML linter (basic)
         run: |
           echo "Check file: web-app/index.html"
-          if grep -qi '<html>' web-app/index.html; then
-            echo " YES! HTML structure detected"
+          if grep -qi '<html' web-app/index.html; then
+            echo "✅ HTML structure found"
           else
-            echo " NO! HTML structure missing"
+            echo "❌ HTML structure missing"
             exit 1
           fi
