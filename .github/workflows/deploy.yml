@@ -1,4 +1,4 @@
-name: Basic HTML CI
+ame: Basic HTML CI
 
 on:
   push:
