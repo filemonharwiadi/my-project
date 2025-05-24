@@ -17,7 +17,8 @@ jobs:
         run: |
           echo "Check file: web-app/index.html"
           if grep -qi '<html>' web-app/index.html; then
-        else
-          echo " X HTML structure missing"
-          exit 1
-        fi
+            echo " YES! HTML structure detected"
+          else
+            echo " NO! HTML structure missing"
+            exit 1
+          fi
